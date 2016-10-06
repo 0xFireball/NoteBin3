@@ -9,19 +9,19 @@ html
 		title notebin | home
 		link(rel="shortcut icon", href="assets/images/notebin-logo.png")
 
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en")
-		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
-		link(rel="stylesheet", href="assets/css/material.min.css")
+		//Materialize
+		link(rel="stylesheet", href="assets/css/materialize.min.css")
 		link(rel="stylesheet", href="static/css/styles.css")
+
+		//jQuery
+
+		script(href="static/js/jquery.min.js")
 	body
-		.demo-layout.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
-			header.demo-header.mdl-layout__header.mdl-color--grey-100.mdl-color-text--grey-600
-				.mdl-layout__header-row
-					span.mdl-layout-title home
-					.mdl-layout-spacer
-					button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon#hdrbtn
-						i.material-icons more_vert
-					ul.mdl-menu.mdl-js-menu.mdl-js-ripple-effect.mdl-menu--bottom-right(for="hdrbtn")
-						li.mdl-menu__item about
-						li.mdl-menu__item contact
-						li.mdl-menu__item legal
+		section#nav
+			//Todo
+
+		section.container#intro
+			h1 welcome to notebin!
+
+
+		script(href="static/js/materialize.min.js")
