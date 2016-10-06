@@ -18,7 +18,16 @@ html
 		script(href="static/js/jquery.min.js")
 	body
 		section#nav
-			//Todo
+			nav
+				.nav-wrapper
+					a.brand-logo.right(href="#") Logo
+					ul.left.hide-on-med-and-down#nav-mobile
+						li
+							a(href="./home") home
+						li
+							a(href="./about") about
+						li
+							a(href="./contact") contact
 
 		section.container#intro
 			h1 welcome to notebin!

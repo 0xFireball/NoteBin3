@@ -6,10 +6,13 @@ namespace NoteBin3.Modules
     {
         public HomeModule()
         {
-            Get("/", args =>
-            {
-                return View["Home"];
-            });
+            Get("/", args => SendHomePage(args));
+            Get("/home", args => SendHomePage(args));
+        }
+
+        private object SendHomePage(dynamic args)
+        {
+            return View["Home"];
         }
     }
 }
