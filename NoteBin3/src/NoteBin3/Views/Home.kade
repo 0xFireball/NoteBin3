@@ -33,15 +33,16 @@ html
 		section.container#intro
 			.mg-divider
 			.row
-				.col.s6
+				.col.s12.m8.l6
 					img.nb-med-square(src="assets/images/notebin-logo.png")
 					h1 notebin
-				h5 a minimalistic home for your notes
-				.mg-divider
-				h6 welcome. please sign up or log in to go to your dashboard.
-				.mg-divider-sm
-				#nb-signup-login
-					a.waves-effect.waves-light.btn.teal#btn-signup(href="./signup") Sign Up
-					a.waves-effect.waves-light.btn.green#btn-login(href="./login") Log In
+				.col.s12.m12.l6
+					h5 a minimalistic home for your notes
+					.mg-divider
+					h6 welcome. please sign up or log in to go to your dashboard.
+					.mg-divider-sm
+					#nb-signup-login
+						a.waves-effect.waves-light.btn.teal#btn-signup(href="./signup") Sign Up
+						a.waves-effect.waves-light.btn.green#btn-login(href="./login") Log In
 
 		script(src="assets/js/materialize.min.js")
