@@ -12,10 +12,10 @@ namespace NoteBin3
         {
             base.ConfigureConventions(nancyConventions);
             nancyConventions.StaticContentsConventions.Add(
-                StaticContentConventionBuilder.AddDirectory("wwwroot/assets", "assets/")
+                StaticContentConventionBuilder.AddDirectory("assets", "wwwroot/assets/")
             );
             nancyConventions.StaticContentsConventions.Add(
-                StaticContentConventionBuilder.AddDirectory("wwwroot/static", "static/")
+                StaticContentConventionBuilder.AddDirectory("static", "wwwroot/static/")
             );
         }
 
