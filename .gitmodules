@@ -1,0 +1,3 @@
+[submodule "Dependencies/KJade"]
+	path = Dependencies/KJade
+	url = https://github.com/0xFireball/KJade
