@@ -15,13 +15,14 @@ html
 
 		//jQuery
 
-		script(href="static/js/jquery.min.js")
+		script(src="static/js/jquery.min.js")
 	body
 		section#nav
 			nav
 				.nav-wrapper
-					a.brand-logo.right(href="#") Logo
-					ul.left.hide-on-med-and-down#nav-mobile
+					a.brand-logo(href="#")
+						img(src="assets/images/notebin-logo.png")
+					ul.hide-on-med-and-down#nav-mobile
 						li
 							a(href="./home") home
 						li
@@ -33,4 +34,4 @@ html
 			h1 welcome to notebin!
 
 
-		script(href="static/js/materialize.min.js")
+		script(src="static/js/materialize.min.js")
