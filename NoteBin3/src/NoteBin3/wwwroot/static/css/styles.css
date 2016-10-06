@@ -7,6 +7,13 @@
     This file is part of NoteBin3
 */
 
+
+/* paper color */
+
+body {
+    background-color: #f4f4f4;
+}
+
 a.padded-brand-logo.left.brand-logo {
     padding-left: 30px;
     padding-right: 30px;
