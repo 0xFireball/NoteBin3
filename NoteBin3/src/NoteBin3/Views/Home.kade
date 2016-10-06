@@ -17,11 +17,11 @@ html
 		.demo-layout.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
 			header.demo-header.mdl-layout__header.mdl-color--grey-100.mdl-color-text--grey-600
 				.mdl-layout__header-row
-					span.mdl-layout-title |home
+					span.mdl-layout-title home
 					.mdl-layout-spacer
-					button#hdrbtn.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-						i.material-icons |more_vert
-					ul.mdl-menu.mdl-js-menu.mdl-js-ripple-effect.mdl-menu--bottom-right for="hdrbtn"
-						li.mdl-menu__item |about
-						li.mdl-menu__item |contact
-						li.mdl-menu__item |legal
+					button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon#hdrbtn
+						i.material-icons more_vert
+					ul.mdl-menu.mdl-js-menu.mdl-js-ripple-effect.mdl-menu--bottom-right(for="hdrbtn")
+						li.mdl-menu__item about
+						li.mdl-menu__item contact
+						li.mdl-menu__item legal
