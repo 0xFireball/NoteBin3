@@ -14,7 +14,7 @@
 					h6 please log in to continue
 					.mg-divider-sm
 					#nb-login
-						form.row
+						form.row(method="post", action="login")
 							.input-field.col.s12.m6
 								input(type="text")#login-username
 								label.active(for="login-username") Username

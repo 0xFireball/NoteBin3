@@ -10,9 +10,15 @@ namespace NoteBin3.Modules
             {
                 return View["Login"];
             });
+
             Get("/signup", args =>
             {
                 return View["Signup"];
+            });
+
+            Post("/login", args =>
+            {
+                return "Login not implemented.";
             });
         }
     }
