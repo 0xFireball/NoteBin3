@@ -17,18 +17,7 @@ html
 
 		script(src="assets/js/jquery.min.js")
 	body
-		section#nav
-			nav.teal.darken-1
-				.nav-wrapper
-					a.waves-effect.waves-dark.padded-brand-logo.left.brand-logo(href="./home") notebin
-
-					ul.right.hide-on-med-and-down#nav-mobile
-						li
-							a.waves-effect.waves-dark(href="./home") home
-						li
-							a.waves-effect.waves-dark(href="./about") about
-						li
-							a.waves-effect.waves-dark(href="./contact") contact
+		@import Nav
 
 		section.container#intro
 			.mg-divider
