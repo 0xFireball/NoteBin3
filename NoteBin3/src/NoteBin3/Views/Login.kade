@@ -13,14 +13,16 @@
 					.mg-divider
 					h6 please log in to continue
 					.mg-divider-sm
-					#nb-signup-login
-						.row
+					#nb-login
+						form.row
 							.input-field.col.s12.m6
 								input(type="text")#login-username
 								label.active(for="login-username") Username
 							.input-field.col.s12.m6
 								input(type="password")#login-password
 								label.active(for="login-password") Password
-						a.waves-effect.waves-light.btn.green#btn-submit-login(href="#") Log In
+							.input-field.col.s12.m12.l12
+								button.btn.waves-effect.waves-light.green(type="submit") Submit
+									i.material-icons.right send
 
 		@import Include/StandardScripts
