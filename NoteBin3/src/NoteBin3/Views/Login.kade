@@ -37,10 +37,16 @@ html
 				.col.s12.m12.l6
 					h5 a minimalistic home for your notes
 					.mg-divider
-					h6 welcome. please sign up or log in to go to your dashboard.
+					h6 please log in to continue
 					.mg-divider-sm
 					#nb-signup-login
-						a.waves-effect.waves-light.btn.teal#btn-signup(href="./signup") Sign Up
-						a.waves-effect.waves-light.btn.green#btn-login(href="./login") Log In
+						.row
+							.input-field.col.s12.m6
+								input(type="text")#login-username
+								label.active(for="login-username") Username
+							.input-field.col.s12.m6
+								input(type="password")#login-password
+								label.active(for="login-password") Password
+						a.waves-effect.waves-light.btn.green#btn-submit-login(href="#") Log In
 
 		script(src="assets/js/materialize.min.js")
