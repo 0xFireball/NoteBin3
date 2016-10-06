@@ -21,6 +21,30 @@ a.padded-brand-logo.left.brand-logo {
     margin-top: 30px;
 }
 
+.mg-divider-sm {
+    height: 10px;
+}
+
 .mg-divider {
     height: 20px;
+}
+
+.mg-divider-2 {
+    height: 40px;
+}
+
+.mg-divider-3 {
+    height: 60px;
+}
+
+.mg-divider-4 {
+    height: 80px;
+}
+
+#btn-signup {
+    margin-right: 15px;
+}
+
+#btn-login {
+    margin-right: 15px;
 }
