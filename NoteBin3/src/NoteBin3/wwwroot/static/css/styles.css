@@ -11,3 +11,16 @@ a.padded-brand-logo.left.brand-logo {
     padding-left: 30px;
     padding-right: 30px;
 }
+
+.nb-med-square {
+    width: 240px;
+    height: 240px;
+}
+
+.margin-above {
+    margin-top: 30px;
+}
+
+.mg-divider {
+    height: 20px;
+}

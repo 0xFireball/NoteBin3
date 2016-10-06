@@ -31,9 +31,11 @@ html
 							a.waves-effect.waves-dark(href="./contact") contact
 
 		section.container#intro
+			img.nb-med-square.margin-above(src="assets/images/notebin-logo.png")
 			h1 notebin
 			h5 a minimalistic home for your notes
-			h3 welcome to notebin!
+			.mg-divider
+			h6 welcome. please sign up or log in to go to your dashboard.
 
 
 		script(src="assets/js/materialize.min.js")
