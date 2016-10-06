@@ -15,23 +15,25 @@ html
 
 		//jQuery
 
-		script(src="static/js/jquery.min.js")
+		script(src="assets/js/jquery.min.js")
 	body
 		section#nav
-			nav
+			nav.teal.darken-1
 				.nav-wrapper
-					a.brand-logo(href="#")
-						img(src="assets/images/notebin-logo.png")
-					ul.hide-on-med-and-down#nav-mobile
+					a.waves-effect.waves-dark.padded-brand-logo.left.brand-logo(href="./home") NoteBin
+
+					ul.right.hide-on-med-and-down#nav-mobile
 						li
-							a(href="./home") home
+							a.waves-effect.waves-dark(href="./home") home
 						li
-							a(href="./about") about
+							a.waves-effect.waves-dark(href="./about") about
 						li
-							a(href="./contact") contact
+							a.waves-effect.waves-dark(href="./contact") contact
 
 		section.container#intro
-			h1 welcome to notebin!
+			h1 notebin
+			h5 a minimalistic home for your notes
+			h3 welcome to notebin!
 
 
-		script(src="static/js/materialize.min.js")
+		script(src="assets/js/materialize.min.js")

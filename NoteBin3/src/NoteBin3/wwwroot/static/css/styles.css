@@ -1,9 +1,13 @@
-﻿
-/*
-Copyright 2016 0xFireball. All Rights Reserved.
+﻿/*
+    Copyright 2016 0xFireball. All Rights Reserved.
 
-https://github.com/0xFireball
-https://0xfireball.me
+    https://github.com/0xFireball
+    https://0xfireball.me
 
-This file is part of NoteBin3
+    This file is part of NoteBin3
 */
+
+a.padded-brand-logo.left.brand-logo {
+    padding-left: 30px;
+    padding-right: 30px;
+}
