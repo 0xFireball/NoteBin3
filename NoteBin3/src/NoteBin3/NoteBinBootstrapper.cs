@@ -1,4 +1,5 @@
 ﻿using LiteDB;
+using LiteDB.Platform;
 using Nancy;
 using Nancy.Authentication.Forms;
 using Nancy.Bootstrapper;
@@ -29,7 +30,7 @@ namespace NoteBin3
             container.Register<IUserMapper, WebLoginUserResolver>();
 
             //Initialize database
-            //LitePlatform.Initialize(new LitePlatformNetCore());
+            LitePlatform.Initialize(new LitePlatformNetCore());
         }
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)

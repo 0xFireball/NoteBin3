@@ -31,7 +31,15 @@
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
-      ]
+      ],
+      "dependencies": {
+        "LiteDB.NetCore": {
+          "target": "project"
+        },
+        "LiteDB.Platform.NetCore": {
+          "target": "project"
+        }
+      }
     }
   },
 
