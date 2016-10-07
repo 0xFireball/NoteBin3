@@ -2,6 +2,7 @@
 
 @import Include/MainHeader
 	body
+		@import Include/StandardScripts
 		@import Include/Nav
 
 		section.container#intro
@@ -36,5 +37,9 @@
 							.input-field.col.s12.m12.l12
 								button.btn.waves-effect.waves-light.green(type="submit") Create Account
 									i.material-icons.right send
-
+					@if? model.SignupError
+						p.red-text invalid login credentials.
+						script.
+							showMessage("error: #{model.ErrorMessage}")
+					@endif
 		@import Include/StandardScripts

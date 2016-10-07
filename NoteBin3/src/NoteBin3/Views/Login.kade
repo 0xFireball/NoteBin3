@@ -2,6 +2,7 @@
 
 @import Include/MainHeader
 	body
+		@import Include/StandardScripts
 		@import Include/Nav
 
 		section.container#intro
@@ -27,7 +28,7 @@
 								button.btn.waves-effect.waves-light.green(type="submit") Submit
 									i.material-icons.right send
 					@if? model.LoginError
-						p.red-text Invalid login credentials.
+						p.red-text invalid login credentials.
+						script.
+							showMessage("login error")
 					@endif
-
-		@import Include/StandardScripts
