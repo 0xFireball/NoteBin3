@@ -25,12 +25,12 @@
 								label.active(for="login-password") Password
 							.input-field.col.s12.m12
 								input.validate(type="password", name="ConfirmPassword")#login-confirm-password
-								label.active(for="login-confirm-password") Confirm Password
+								label.active(for="login-confirm-password") Confirm Password								
 							.input-field.col.s12.m12
-								.div.red-text
-									p.
-										notebin stores your data encrypted, so we cannot recover your
-										data if you forget your password.
+								p.red-text.
+									notebin stores your data encrypted, so we cannot recover your
+									data if you forget your password.
+								.mg-divider-2
 								input.validate(type="checkbox", name="IUnderstand")#login-iunderstand
 								label.active(for="login-iunderstand") I Understand
 							.input-field.col.s12.m12.l12
