@@ -1,4 +1,6 @@
-﻿namespace NoteBin3.Services.Authentication
+﻿using System;
+
+namespace NoteBin3.Services.Authentication
 {
     public class RegisteredUser
     {
@@ -6,6 +8,6 @@
         
         public string Password { get; set; }
 
-        public string Identifier { get; set; }
+        public Guid Identifier { get; set; }
     }
 }

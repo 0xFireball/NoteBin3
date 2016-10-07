@@ -1,7 +1,8 @@
-﻿using System;
-using System.Security.Claims;
-using Nancy;
+﻿using Nancy;
 using Nancy.Authentication.Forms;
+using NoteBin3.Services.Database;
+using System;
+using System.Security.Claims;
 
 namespace NoteBin3.Services.Authentication
 {
@@ -9,7 +10,26 @@ namespace NoteBin3.Services.Authentication
     {
         public ClaimsPrincipal GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
-            throw new NotImplementedException();
+            RegisteredUser storedUserRecord = null;
+            using (var db = new DatabaseAccessService().OpenOrCreateDefault())
+            {
+                var registeredUsers = db.GetCollection<RegisteredUser>(DatabaseAccessService.UsersCollectionDatabaseKey);
+                var userRecord = registeredUsers.FindOne(u => u.Identifier == identifier);
+                storedUserRecord = userRecord;
+            }
+            if (storedUserRecord == null)
+            {
+                return null;
+            }
+            var userIdentity = new ClaimsIdentity(new AuthenticatedUser
+            {
+                Name = storedUserRecord.Username,
+                IsAuthenticated = true,
+            });
+
+            userIdentity.AddClaim(new Claim(nameof(RegisteredUser.Username), storedUserRecord.Username));
+            
+            return new ClaimsPrincipal(userIdentity);
         }
     }
 }
