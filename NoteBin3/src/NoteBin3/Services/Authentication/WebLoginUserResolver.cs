@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace NoteBin3.Services.Authentication
 {
-    public class WebLoginUserMapper : IUserMapper
+    public class WebLoginUserResolver : IUserMapper
     {
         public ClaimsPrincipal GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
@@ -28,8 +28,24 @@ namespace NoteBin3.Services.Authentication
             });
 
             userIdentity.AddClaim(new Claim(nameof(RegisteredUser.Username), storedUserRecord.Username));
-            
+
             return new ClaimsPrincipal(userIdentity);
+        }
+
+        public RegisteredUser FindUserByUsername(string username)
+        {
+            RegisteredUser storedUserRecord = null;
+            using (var db = new DatabaseAccessService().OpenOrCreateDefault())
+            {
+                var registeredUsers = db.GetCollection<RegisteredUser>(DatabaseAccessService.UsersCollectionDatabaseKey);
+                var userRecord = registeredUsers.FindOne(u => u.Username == username);
+                storedUserRecord = userRecord;
+            }
+            if (storedUserRecord == null)
+            {
+                return null;
+            }
+            return storedUserRecord;
         }
     }
 }

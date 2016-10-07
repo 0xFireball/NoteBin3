@@ -1,1 +1,40 @@
-﻿
+﻿//Home Page
+
+@import Include/MainHeader
+	body
+		@import Include/Nav
+
+		section.container#intro
+			.mg-divider
+			.row
+				@import IntroPartial
+				.col.s12.m12.l6
+					h5 a minimalistic home for your notes
+					.mg-divider
+					h6 you can register for notebin here
+					p already have an account?
+					a(href="./login") login
+					.mg-divider-sm
+					#nb-login
+						form.row(method="post", action="signup")
+							.input-field.col.s12.m12
+								input.validate(type="text", name="Username")#login-username
+								label.active(for="login-username") Username
+							.input-field.col.s12.m12
+								input.validate(type="password", name="Password")#login-password
+								label.active(for="login-password") Password
+							.input-field.col.s12.m12
+								input.validate(type="password", name="ConfirmPassword")#login-confirm-password
+								label.active(for="login-confirm-password") Confirm Password
+							.input-field.col.s12.m12
+								.div.red-text
+									p.
+										notebin stores your data encrypted, so we cannot recover your
+										data if you forget your password.
+								input.validate(type="checkbox", name="IUnderstand")#login-iunderstand
+								label.active(for="login-iunderstand") I Understand
+							.input-field.col.s12.m12.l12
+								button.btn.waves-effect.waves-light.green(type="submit") Create Account
+									i.material-icons.right send
+
+		@import Include/StandardScripts

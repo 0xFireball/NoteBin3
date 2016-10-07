@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using LiteDB;
+using Nancy;
 using Nancy.Authentication.Forms;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
@@ -25,7 +26,10 @@ namespace NoteBin3
         {
             base.ApplicationStartup(container, pipelines);
             CookieBasedSessions.Enable(pipelines);
-            container.Register<IUserMapper, WebLoginUserMapper>();
+            container.Register<IUserMapper, WebLoginUserResolver>();
+
+            //Initialize database
+            //LitePlatform.Initialize(new LitePlatformNetCore());
         }
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
