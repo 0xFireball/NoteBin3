@@ -28,7 +28,8 @@ namespace NoteBin3.Modules
 
                 if (matchingUser == null || matchingUser.Password != loginParams.Password)
                 {
-                    return "Invalid login credentials!";
+                    //return "Invalid login credentials!";
+                    return View["Login", new { LoginError = true }];
                 }
 
                 var expiryTime = DateTime.Now.AddDays(1);

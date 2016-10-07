@@ -26,5 +26,8 @@
 							.input-field.col.s12.m12.l12
 								button.btn.waves-effect.waves-light.green(type="submit") Submit
 									i.material-icons.right send
+					@if? model.LoginError
+						p.red-text Invalid login credentials.
+					@endif
 
 		@import Include/StandardScripts
