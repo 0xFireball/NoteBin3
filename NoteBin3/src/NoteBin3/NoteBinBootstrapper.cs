@@ -1,8 +1,10 @@
 ﻿using Nancy;
+using Nancy.Authentication.Forms;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
 using Nancy.Session;
 using Nancy.TinyIoc;
+using NoteBin3.Services.Authentication;
 
 namespace NoteBin3
 {
@@ -23,6 +25,22 @@ namespace NoteBin3
         {
             base.ApplicationStartup(container, pipelines);
             CookieBasedSessions.Enable(pipelines);
+            container.Register<IUserMapper, WebLoginUserMapper>();
+        }
+
+        protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
+        {
+            base.RequestStartup(container, pipelines, context);
+
+
+            var formsAuthConfiguration =
+            new FormsAuthenticationConfiguration()
+            {
+                RedirectUrl = "~/login",
+                UserMapper = container.Resolve<IUserMapper>(),
+            };
+
+            FormsAuthentication.Enable(pipelines, formsAuthConfiguration);
         }
     }
 }

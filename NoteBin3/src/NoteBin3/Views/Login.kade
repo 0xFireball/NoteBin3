@@ -16,10 +16,10 @@
 					#nb-login
 						form.row(method="post", action="login")
 							.input-field.col.s12.m6
-								input(type="text")#login-username
+								input(type="text", name="Username")#login-username
 								label.active(for="login-username") Username
 							.input-field.col.s12.m6
-								input(type="password")#login-password
+								input(type="password", name="Password")#login-password
 								label.active(for="login-password") Password
 							.input-field.col.s12.m12.l12
 								button.btn.waves-effect.waves-light.green(type="submit") Submit
