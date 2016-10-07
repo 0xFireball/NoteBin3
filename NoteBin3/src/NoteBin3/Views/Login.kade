@@ -32,3 +32,7 @@
 						script.
 							showMessage("login error")
 					@endif
+					@if? model.ToContinue
+						script.
+							showMessage("please log in to continue")
+					@endif

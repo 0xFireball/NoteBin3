@@ -1,12 +1,14 @@
 ﻿using Nancy;
 using Nancy.Authentication.Forms;
+using NoteBin3.Models.Auth;
 using NoteBin3.Services.Database;
 using System;
+using System.Security;
 using System.Security.Claims;
 
 namespace NoteBin3.Services.Authentication
 {
-    public class WebLoginUserResolver : IUserMapper
+    public class WebLoginUserManager : IUserMapper
     {
         public ClaimsPrincipal GetUserFromIdentifier(Guid identifier, NancyContext context)
         {
@@ -46,6 +48,35 @@ namespace NoteBin3.Services.Authentication
                 return null;
             }
             return storedUserRecord;
+        }
+
+        /// <summary>
+        /// Attempts to register a new user. Only the username is validated, it is expected that other fields have already been validated!
+        /// </summary>
+        /// <param name="signupParams"></param>
+        /// <returns></returns>
+        public RegisteredUser RegisterUser(WebSignupParams signupParams)
+        {
+            RegisteredUser newUserRecord = null;
+            if (FindUserByUsername(signupParams.Username) != null)
+            {
+                //BAD! Another conflicting user exists!
+                throw new SecurityException("A user with the same username already exists!");
+            }
+            using (var db = new DatabaseAccessService().OpenOrCreateDefault())
+            {
+                var registeredUsers = db.GetCollection<RegisteredUser>(DatabaseAccessService.UsersCollectionDatabaseKey);
+                //Create user
+                newUserRecord = new RegisteredUser
+                {
+                    Identifier = Guid.NewGuid(),
+                    Password = signupParams.Password,
+                    Username = signupParams.Username,
+                };
+                //Add the user to the database
+                registeredUsers.Insert(newUserRecord);
+            }
+            return newUserRecord;
         }
     }
 }

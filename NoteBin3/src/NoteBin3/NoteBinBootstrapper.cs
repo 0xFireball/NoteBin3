@@ -27,7 +27,7 @@ namespace NoteBin3
         {
             base.ApplicationStartup(container, pipelines);
             CookieBasedSessions.Enable(pipelines);
-            container.Register<IUserMapper, WebLoginUserResolver>();
+            container.Register<IUserMapper, WebLoginUserManager>();
 
             //Initialize database
             LitePlatform.Initialize(new LitePlatformNetCore());

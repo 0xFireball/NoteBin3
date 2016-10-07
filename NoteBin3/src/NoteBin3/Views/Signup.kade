@@ -28,18 +28,25 @@
 								input.validate(type="password", name="ConfirmPassword")#login-confirm-password
 								label.active(for="login-confirm-password") Confirm Password								
 							.input-field.col.s12.m12
-								p.red-text.
+								p.green-text.
 									notebin stores your data encrypted, so we cannot recover your
 									data if you forget your password.
 								.mg-divider-2
 								input.validate(type="checkbox", name="IUnderstand")#login-iunderstand
 								label.active(for="login-iunderstand") I Understand
+							.input-field.col.s12.m12
+								p.green-text.
+									please assure that you will abide by the
+								a(href="./tos") terms of service
+								.mg-divider-2
+								input.validate(type="checkbox", name="IAccept")#login-iaccept
+								label.active(for="login-iaccept") I Accept
 							.input-field.col.s12.m12.l12
 								button.btn.waves-effect.waves-light.green(type="submit") Create Account
 									i.material-icons.right send
 					@if? model.SignupError
-						p.red-text invalid login credentials.
+						p.red-text error#{model.ErrorMessage}
 						script.
-							showMessage("error: #{model.ErrorMessage}")
+							showMessage("error#{model.ErrorMessage}")
 					@endif
 		@import Include/StandardScripts
