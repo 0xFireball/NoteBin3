@@ -26,7 +26,7 @@ namespace NoteBin3.Modules
                 var dbConnection = new WebLoginUserResolver();
                 var matchingUser = dbConnection.FindUserByUsername(loginParams.Username);
 
-                if (matchingUser != null && matchingUser.Password != loginParams.Password)
+                if (matchingUser == null || matchingUser.Password != loginParams.Password)
                 {
                     return "Invalid login credentials!";
                 }
