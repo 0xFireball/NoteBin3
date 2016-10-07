@@ -1,3 +1,6 @@
 [submodule "Dependencies/KJade"]
 	path = Dependencies/KJade
 	url = https://github.com/0xFireball/KJade
+[submodule "Dependencies/LiteDB"]
+	path = Dependencies/LiteDB
+	url = https://github.com/mbdavid/LiteDB.git
