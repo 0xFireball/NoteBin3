@@ -1,20 +1,20 @@
 ﻿section#nav
 			nav.teal.darken-1
 				.nav-wrapper
-					a.waves-effect.waves-dark.padded-brand-logo.left.brand-logo(href="./home") notebin
+					a.waves-effect.waves-dark.padded-brand-logo.left.brand-logo(href="/home") notebin
 
 					ul.right.hide-on-med-and-down#nav-mobile
 						li
-							a.waves-effect.waves-dark(href="./home") home
+							a.waves-effect.waves-dark(href="/home") home
 						@ifnot? model.LoggedIn
 						li
-							a.waves-effect.waves-dark(href="./about") about
+							a.waves-effect.waves-dark(href="/about") about
 						li
-							a.waves-effect.waves-dark(href="./login") login
+							a.waves-effect.waves-dark(href="/login") login
 						@endif
 						@if? model.LoggedIn
 						li
-							a.waves-effect.waves-dark(href="./dashboard") dashboard
+							a.waves-effect.waves-dark(href="/dashboard/") dashboard
 						li
-							a.waves-effect.waves-dark(href="./logout") logout
+							a.waves-effect.waves-dark(href="/logout") logout
 						@endif

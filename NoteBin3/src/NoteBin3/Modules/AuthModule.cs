@@ -17,7 +17,7 @@ namespace NoteBin3.Modules
             {
                 if (Context.CurrentUser != null)
                 {
-                    return new RedirectResponse("./dashboard");
+                    return new RedirectResponse("./dashboard/");
                 }
                 return View["Login"];
             });
@@ -37,7 +37,7 @@ namespace NoteBin3.Modules
                 }
 
                 var expiryTime = DateTime.Now.AddDays(1);
-                return this.LoginAndRedirect(matchingUser.Identifier, expiryTime, "./dashboard");
+                return this.LoginAndRedirect(matchingUser.Identifier, expiryTime, "/dashboard/");
             });
 
             //Signup form
@@ -45,7 +45,7 @@ namespace NoteBin3.Modules
             {
                 if (Context.CurrentUser != null)
                 {
-                    return new RedirectResponse("./dashboard");
+                    return new RedirectResponse("/dashboard/");
                 }
                 return View["Signup"];
             });
@@ -87,7 +87,7 @@ namespace NoteBin3.Modules
             Get("/logout", args =>
             {
                 //Log out the user
-                return this.LogoutAndRedirect("./home");
+                return this.LogoutAndRedirect("/home");
             });
         }
     }

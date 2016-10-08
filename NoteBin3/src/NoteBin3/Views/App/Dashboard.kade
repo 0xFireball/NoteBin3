@@ -13,3 +13,4 @@
 					h5 a minimalistic home for your notes
 					.mg-divider
 					h6 welcome to your dashboard
+					a(href="notebook") open my notebook

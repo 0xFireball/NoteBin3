@@ -41,7 +41,7 @@ namespace NoteBin3
             var formsAuthConfiguration =
             new FormsAuthenticationConfiguration()
             {
-                RedirectUrl = "~/login",
+                RedirectUrl = "/login",
                 UserMapper = container.Resolve<IUserMapper>(),
             };
 

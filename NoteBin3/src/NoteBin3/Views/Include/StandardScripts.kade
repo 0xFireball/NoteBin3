@@ -1,2 +1,2 @@
-﻿script(src="assets/js/materialize.min.js")
-		script(src="static/js/nb-helpers.js")
+﻿script(src="/assets/js/materialize.min.js")
+		script(src="/static/js/nb-helpers.js")

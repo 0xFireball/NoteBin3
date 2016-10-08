@@ -5,15 +5,15 @@
 		meta(name="description", content="a minimalistic place for your notes")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
 		title notebin
-		link(rel="shortcut icon", href="assets/images/notebin-logo.png")
+		link(rel="shortcut icon", href="/assets/images/notebin-logo.png")
 
 		//Google Icon Font
 		link(href="http://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
 
 		//Materialize
-		link(rel="stylesheet", href="assets/css/materialize.min.css")
-		link(rel="stylesheet", href="static/css/styles.css")
+		link(rel="stylesheet", href="/assets/css/materialize.min.css")
+		link(rel="stylesheet", href="/static/css/styles.css")
 
 		//jQuery
 
-		script(src="assets/js/jquery.min.js")
+		script(src="/assets/js/jquery.min.js")
