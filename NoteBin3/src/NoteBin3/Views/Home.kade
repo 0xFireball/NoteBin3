@@ -2,9 +2,10 @@
 
 @import Include/MainHeader
 	body
+		@import Include/StandardScripts
 		@import Include/Nav
 
-		section.container#intro
+		section.container.main-content#intro
 			.mg-divider
 			.row
 				@import IntroPartial
@@ -17,4 +18,4 @@
 						a.waves-effect.waves-light.btn.teal#btn-signup(href="./signup") Sign Up
 						a.waves-effect.waves-light.btn.green#btn-login(href="./login") Log In
 
-		@import Include/StandardScripts
+		@import Include/MainFooter

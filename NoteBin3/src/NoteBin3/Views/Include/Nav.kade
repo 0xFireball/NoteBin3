@@ -9,4 +9,4 @@
 						li
 							a.waves-effect.waves-dark(href="./about") about
 						li
-							a.waves-effect.waves-dark(href="./contact") contact
+							a.waves-effect.waves-dark(href="./login") login

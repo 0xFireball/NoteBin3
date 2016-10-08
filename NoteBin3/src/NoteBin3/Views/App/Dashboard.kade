@@ -1,0 +1,15 @@
+﻿//Dashboard
+
+@import Include/MainHeader
+	body
+		@import Include/StandardScripts
+		@import Include/Nav
+
+		section.container.main-content#intro
+			.mg-divider
+			.row
+				@import IntroPartial
+				.col.s12.m12.l6
+					h5 a minimalistic home for your notes
+					.mg-divider
+					h6 welcome to your dashboard

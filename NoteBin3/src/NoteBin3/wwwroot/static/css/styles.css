@@ -12,6 +12,13 @@
 
 body {
     background-color: #f4f4f4;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto;
 }
 
 a.padded-brand-logo.left.brand-logo {

@@ -1,11 +1,11 @@
-﻿//Home Page
+﻿//Login
 
 @import Include/MainHeader
 	body
 		@import Include/StandardScripts
 		@import Include/Nav
 
-		section.container#intro
+		section.container.main-content#intro
 			.mg-divider
 			.row
 				@import IntroPartial
@@ -36,3 +36,4 @@
 						script.
 							showMessage("please log in to continue")
 					@endif
+		@import Include/MainFooter

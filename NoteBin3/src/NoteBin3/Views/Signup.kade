@@ -1,11 +1,11 @@
-﻿//Home Page
+﻿//Signup
 
 @import Include/MainHeader
 	body
 		@import Include/StandardScripts
 		@import Include/Nav
 
-		section.container#intro
+		section.container.main-content#intro
 			.mg-divider
 			.row
 				@import IntroPartial
@@ -49,4 +49,4 @@
 						script.
 							showMessage("error#{model.ErrorMessage}")
 					@endif
-		@import Include/StandardScripts
+		@import Include/MainFooter

@@ -1,0 +1,20 @@
+﻿//Footer
+		footer.page-footer.teal
+			.container
+				.row
+					.col.l6.s12.grey-text.text-lighten-3
+						h5 notebin
+						p a minimalistic home for your notes
+					.col.l4.offset-l2.s12
+						h5.white-text Links
+						ul
+							li
+								a.grey-text.text-lighten-3(href="/about") about
+							li
+								a.grey-text.text-lighten-3(href="/contact") contact
+							li
+								a.grey-text.text-lighten-3(href="/tos") terms of service
+			.footer-copyright
+				.container
+					© 2016 0xFireball, IridiumIon Software
+					a.grey-text.text-lighten-4.right(href="https://0xfireball.me") 0xfireball
