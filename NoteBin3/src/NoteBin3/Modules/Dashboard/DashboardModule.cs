@@ -10,7 +10,7 @@ namespace NoteBin3.Modules.Dashboard
             this.RequiresAuthentication();
             Get("/dashboard/", args =>
             {
-                return View["App/Dashboard", new { LoggedIn = true }];
+                return View["App/Dashboard", new { LoggedIn = true, Title = "notebin | dashboard" }];
             });
             Get("/dashboard/notebook", args =>
             {
