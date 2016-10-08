@@ -36,7 +36,7 @@ namespace NoteBin3.Services.UserData
                 {
                     Contents = new NotebookData
                     {
-                        MarkdownText = "\n"
+                        MarkdownText = "new note"
                     },
                     Identifier = notebookGuid
                 };
@@ -51,6 +51,15 @@ namespace NoteBin3.Services.UserData
             }
 
             return loadedNotebook;
+        }
+
+        /// <summary>
+        /// Updates the notebook in the database
+        /// </summary>
+        /// <param name="currentNotebook"></param>
+        public bool UpdateNotebooks(RegisteredUser currentUser, WebLoginUserManager managerConnection)
+        {
+            return managerConnection.UpdateUserInDatabase(currentUser);
         }
     }
 }

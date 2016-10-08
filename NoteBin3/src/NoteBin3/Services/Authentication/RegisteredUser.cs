@@ -1,4 +1,5 @@
-﻿using NoteBin3.Types;
+﻿using LiteDB;
+using NoteBin3.Types;
 using System;
 using System.Collections.Generic;
 
@@ -17,5 +18,8 @@ namespace NoteBin3.Services.Authentication
         public Guid Identifier { get; set; }
 
         public List<Notebook> Notebooks { get; set; }
+
+        [BsonId]
+        public ObjectId DatabaseIdentifier { get; set; }
     }
 }

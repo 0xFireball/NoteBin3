@@ -50,6 +50,8 @@ namespace NoteBin3.Modules.Dashboard
                 //Update notebook data
                 currentNotebook.Contents = nbData;
 
+                notebookAccessConnection.UpdateNotebooks(currentUser, userManagerConnection);
+
                 return "OK";
             });
         }
