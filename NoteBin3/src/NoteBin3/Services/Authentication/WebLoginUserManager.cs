@@ -51,6 +51,17 @@ namespace NoteBin3.Services.Authentication
             return storedUserRecord;
         }
 
+        public bool UpdateUserInDatabase(RegisteredUser currentUser)
+        {
+            bool result;
+            using (var db = new DatabaseAccessService().OpenOrCreateDefault())
+            {
+                var registeredUsers = db.GetCollection<RegisteredUser>(DatabaseAccessService.UsersCollectionDatabaseKey);
+                result = registeredUsers.Update(currentUser);
+            }
+            return result;
+        }
+
         /// <summary>
         /// Attempts to register a new user. Only the username is validated, it is expected that other fields have already been validated!
         /// </summary>
@@ -82,6 +93,9 @@ namespace NoteBin3.Services.Authentication
                 };
                 //Add the user to the database
                 registeredUsers.Insert(newUserRecord);
+
+                //Index database
+                registeredUsers.EnsureIndex(x => x.Identifier);
             }
             return newUserRecord;
         }

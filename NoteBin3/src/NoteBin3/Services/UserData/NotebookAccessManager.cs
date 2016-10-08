@@ -10,6 +10,7 @@ namespace NoteBin3.Services.UserData
     {
         public Notebook LoadNotebook(RegisteredUser currentUser, Guid notebookGuid)
         {
+            if (currentUser.Notebooks == null) return null;
             Notebook loadedNotebook = currentUser.Notebooks.FirstOrDefault(n => n.Identifier == notebookGuid);
             return loadedNotebook;
         }
@@ -20,7 +21,7 @@ namespace NoteBin3.Services.UserData
         /// <param name="currentUser">The current user</param>
         /// <param name="notebookGuid">The GUID to look for, or to make a new notebook with</param>
         /// <returns></returns>
-        public Notebook LoadOrCreateNotebook(RegisteredUser currentUser, Guid notebookGuid)
+        public Notebook LoadOrCreateNotebook(RegisteredUser currentUser, Guid notebookGuid, WebLoginUserManager managerConnection)
         {
             //load existing notebook if available
             var loadedNotebook = LoadNotebook(currentUser, notebookGuid);
@@ -35,7 +36,7 @@ namespace NoteBin3.Services.UserData
                 {
                     Contents = new NotebookData
                     {
-                        MarkdownText = string.Empty
+                        MarkdownText = "\n"
                     },
                     Identifier = notebookGuid
                 };
@@ -45,6 +46,8 @@ namespace NoteBin3.Services.UserData
 
                 //update reference to point to new notebook
                 loadedNotebook = newNotebook;
+
+                var updateResult = managerConnection.UpdateUserInDatabase(currentUser);
             }
 
             return loadedNotebook;

@@ -22,6 +22,8 @@ namespace NoteBin3.Modules.Dashboard
                 //bind the data to a model and save it
                 var dataPackage = this.Bind<NotebookSaveDataModel>();
 
+                int epoch = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+
                 Guid notebookGuid;
                 var validInputGuid = Guid.TryParse(args.id, out notebookGuid);
                 if (!validInputGuid)
@@ -43,7 +45,7 @@ namespace NoteBin3.Modules.Dashboard
                 var currentUser = userManagerConnection.FindUserByUsername(Context.CurrentUser.Identity.Name);
 
                 var notebookAccessConnection = new NotebookAccessManager();
-                var currentNotebook = notebookAccessConnection.LoadOrCreateNotebook(currentUser, notebookGuid);
+                var currentNotebook = notebookAccessConnection.LoadOrCreateNotebook(currentUser, notebookGuid, userManagerConnection);
 
                 //Update notebook data
                 currentNotebook.Contents = nbData;
