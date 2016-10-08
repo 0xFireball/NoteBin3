@@ -3,6 +3,7 @@ using Nancy.Authentication.Forms;
 using NoteBin3.Models.Auth;
 using NoteBin3.Services.Database;
 using System;
+using System.Collections;
 using System.Security;
 using System.Security.Claims;
 
@@ -66,17 +67,30 @@ namespace NoteBin3.Services.Authentication
             using (var db = new DatabaseAccessService().OpenOrCreateDefault())
             {
                 var registeredUsers = db.GetCollection<RegisteredUser>(DatabaseAccessService.UsersCollectionDatabaseKey);
+                //Calculate cryptographic info
+                var cryptoConf = PasswordCryptoConfiguration.CreateDefault();
+                var pwSalt = AuthCryptoHelper.GetRandomSalt(64);
+                var encryptedPassword = AuthCryptoHelper.CalculateUserPasswordHash(signupParams.Password, pwSalt, cryptoConf);
                 //Create user
                 newUserRecord = new RegisteredUser
                 {
                     Identifier = Guid.NewGuid(),
-                    Password = signupParams.Password,
                     Username = signupParams.Username,
+                    CryptoSalt = pwSalt,
+                    PasswordCryptoConf = cryptoConf,
+                    PasswordKey = encryptedPassword,
                 };
                 //Add the user to the database
                 registeredUsers.Insert(newUserRecord);
             }
             return newUserRecord;
+        }
+
+        public bool CheckPassword(string password, RegisteredUser userRecord)
+        {
+            //Calculate hash and compare
+            var pwKey = AuthCryptoHelper.CalculateUserPasswordHash(password, userRecord.CryptoSalt, userRecord.PasswordCryptoConf);
+            return StructuralComparisons.StructuralEqualityComparer.Equals(pwKey, userRecord.PasswordKey);
         }
     }
 }

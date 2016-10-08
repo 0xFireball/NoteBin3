@@ -1,6 +1,7 @@
 ﻿using Nancy;
 using Nancy.Authentication.Forms;
 using Nancy.ModelBinding;
+using Nancy.Responses;
 using NoteBin3.Models.Auth;
 using NoteBin3.Services.Authentication;
 using System;
@@ -14,19 +15,22 @@ namespace NoteBin3.Modules
             //Login form
             Get("/login", args =>
             {
+                if (Context.CurrentUser != null)
+                {
+                    return new RedirectResponse("./dashboard");
+                }
                 return View["Login"];
             });
-
+            
             //When the login form is submitted
             Post("/login", args =>
             {
                 var loginParams = this.Bind<WebLoginParams>();
 
-                //Check password (CURRENTLY INSECURE!)
-                var dbConnection = new WebLoginUserManager();
-                var matchingUser = dbConnection.FindUserByUsername(loginParams.Username);
+                var userManagerConnection = new WebLoginUserManager();
+                var matchingUser = userManagerConnection.FindUserByUsername(loginParams.Username);
 
-                if (matchingUser == null || matchingUser.Password != loginParams.Password)
+                if (matchingUser == null || !userManagerConnection.CheckPassword(loginParams.Password, matchingUser))
                 {
                     //return "Invalid login credentials!";
                     return View["Login", new { LoginError = true }];
@@ -63,15 +67,14 @@ namespace NoteBin3.Modules
                 //Creation should throw a security exception
                 try
                 {
-                    var dbConnection = new WebLoginUserManager();
-                    dbConnection.RegisterUser(signupParams);
+                    var userManagerConnection = new WebLoginUserManager();
+                    //This can take a bit of time, as crypto stuff has to be generated
+                    userManagerConnection.RegisterUser(signupParams);
                 }
                 catch
                 {
                     return View["Signup", new { SignupError = true, ErrorMessage = ": username is taken!" }];
                 }
-
-                //TODO: Calculate a secure hash of the password and store instead of the actual password!
 
                 return View["Login", new { ToContinue = true }];
             });
