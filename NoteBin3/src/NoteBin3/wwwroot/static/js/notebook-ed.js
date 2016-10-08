@@ -62,10 +62,28 @@ $("#show-preview-cb").on("change", () => {
         $("#editor-container")
             .removeClass("l12")
             .addClass("l6");
+        updatePreview(mdEditor.getValue());
     } else {
         $("#preview-container").hide();
         $("#editor-container")
             .removeClass("l6")
             .addClass("l12");
+    }
+});
+
+$("#show-editor-cb").on("change", () => {
+    let showEditor = $("#show-editor-cb").prop("checked");
+    if (showEditor) {
+        $("#preview-container")
+            .removeClass("l12")
+            .addClass("l6");
+        $("#editor-container")
+            .show();
+    } else {
+        $("#preview-container")
+            .removeClass("l6")
+            .addClass("l12");
+        $("#editor-container")
+            .hide();
     }
 });

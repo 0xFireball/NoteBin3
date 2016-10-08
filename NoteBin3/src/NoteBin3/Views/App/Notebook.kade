@@ -17,6 +17,9 @@
 					.input-field
 						input(type="checkbox", checked="checked")#show-preview-cb
 						label(for="show-preview-cb") show preview
+					.input-field
+						input(type="checkbox", checked="checked")#show-editor-cb
+						label(for="show-editor-cb") show editor
 			.row
 				.col.s12.m12.l6#editor-container
 					//Markdown editor
