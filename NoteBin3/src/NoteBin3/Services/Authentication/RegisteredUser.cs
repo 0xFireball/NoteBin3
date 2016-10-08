@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NoteBin3.Types;
+using System;
+using System.Collections.Generic;
 
 namespace NoteBin3.Services.Authentication
 {
@@ -13,5 +15,7 @@ namespace NoteBin3.Services.Authentication
         public PasswordCryptoConfiguration PasswordCryptoConf { get; set; }
 
         public Guid Identifier { get; set; }
+
+        public List<Notebook> Notebooks { get; set; }
     }
 }
