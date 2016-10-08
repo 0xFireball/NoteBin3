@@ -43,6 +43,10 @@ namespace NoteBin3.Modules
             //Signup form
             Get("/signup", args =>
             {
+                if (Context.CurrentUser != null)
+                {
+                    return new RedirectResponse("./dashboard");
+                }
                 return View["Signup"];
             });
 

@@ -1,4 +1,4 @@
 
-# NoteBin3
+# notebin3
 
-NoteBin 3
+a beautiful, minimalist home for your notes

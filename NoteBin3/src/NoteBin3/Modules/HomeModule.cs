@@ -12,7 +12,8 @@ namespace NoteBin3.Modules
 
         private object SendHomePage(dynamic args)
         {
-            return View["Home"];
+            var loggedIn = Context.CurrentUser != null;
+            return View["Home", new { LoggedIn = loggedIn }];
         }
     }
 }

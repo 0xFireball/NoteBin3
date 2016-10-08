@@ -28,12 +28,12 @@
 								button.btn.waves-effect.waves-light.green(type="submit") Submit
 									i.material-icons.right send
 					@if? model.LoginError
-						p.red-text invalid login credentials.
-						script.
-							showMessage("login error")
+					p.red-text invalid login credentials.
+					script.
+						showMessage("login error")
 					@endif
 					@if? model.ToContinue
-						script.
-							showMessage("please log in to continue")
+					script.
+						showMessage("please log in to continue")
 					@endif
 		@import Include/MainFooter

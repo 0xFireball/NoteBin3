@@ -45,8 +45,8 @@
 								button.btn.waves-effect.waves-light.green(type="submit") Create Account
 									i.material-icons.right send
 					@if? model.SignupError
-						p.red-text error#{model.ErrorMessage}
-						script.
-							showMessage("error#{model.ErrorMessage}")
+					p.red-text error#{model.ErrorMessage}
+					script.
+						showMessage("error#{model.ErrorMessage}")
 					@endif
 		@import Include/MainFooter
