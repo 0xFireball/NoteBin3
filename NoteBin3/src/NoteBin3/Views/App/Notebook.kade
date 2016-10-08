@@ -1,0 +1,44 @@
+﻿//Dashboard
+
+@import Include/MainHeader
+	body
+		@import Include/StandardScripts
+		@import Include/Nav
+
+		section.container.main-content#intro
+			.mg-divider
+			.row
+				@import IntroPartial
+				.col.s12.m12.l6
+					h5 a minimalistic home for your notes
+					.mg-divider
+					h6 your notebook
+				form.col.s12.m12.l6.hide-on-med-and-down
+					.input-field
+						input(type="checkbox", checked="checked")#show-preview-cb
+						label(for="show-preview-cb") show preview
+			.row
+				.col.s12.m12.l6#editor-container
+					//Markdown editor
+					textarea#md-editor
+				.col.hide-on-med-and-down.l6#preview-container
+					//Preview
+					#rendered-md
+		
+		//CodeMirror assets
+		link(rel="stylesheet", href="/assets/codemirror/lib/codemirror.css")
+		link(rel="stylesheet", href="/assets/css/simplescrollbars.custom.css")
+		link(rel="stylesheet", href="/assets/codemirror/theme/3024-day.css")
+		script(src="/assets/codemirror/lib/codemirror.js")
+		script(src="/assets/codemirror/mode/markdown/markdown.js")
+		script(src="/assets/codemirror/addon/search/search.js")
+		script(src="/assets/codemirror/addon/search/searchcursor.js")
+		script(src="/assets/codemirror/addon/search/jump-to-line.js")
+		script(src="/assets/codemirror/addon/dialog/dialog.js")
+		script(src="/assets/codemirror/addon/edit/matchbrackets.js")
+		script(src="/assets/codemirror/addon/wrap/hardwrap.js")
+		script(src="/assets/codemirror/addon/scroll/simplescrollbars.js")
+
+		//Editor bootstrapper
+		script(src="/assets/js/marked.min.js")
+		script(src="/static/js/notebook-ed.js")
