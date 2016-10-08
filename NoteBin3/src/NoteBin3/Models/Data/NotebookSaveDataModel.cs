@@ -7,5 +7,9 @@
     public class NotebookSaveDataModel
     {
         public string Contents { get; set; }
+        /// <summary>
+        /// Epoch time stamp
+        /// </summary>
+        public int TimeStamp { get; set; }
     }
 }

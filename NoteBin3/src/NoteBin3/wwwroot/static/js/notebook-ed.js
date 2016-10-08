@@ -8,6 +8,9 @@
     This file is part of NoteBin3
 */
 
+//For now, we're using a default GUID until a notebook switching UI is added
+let notebookGuid = "344b7d3f-ed73-4f28-adb7-d2b1c859aca0";
+
 let codeMirrorOpts = {
     mode: "gfm",
     matchBrackets: true,
@@ -33,6 +36,7 @@ mdEditor.on("change", function(cm, change) {
         updatePreview(mdEditor.getValue());
     }
     //send save request to server 
+    sendSaveRequest();
 });
 
 function restoreSavedSession() {
@@ -87,3 +91,15 @@ $("#show-editor-cb").on("change", () => {
             .hide();
     }
 });
+
+function sendSaveRequest() {
+    let saveRequestData = {
+        Contents: mdEditor.getValue(),
+        TimeStamp: 0,
+    };
+    $.post("/dashboard/notebook/" + notebookGuid + "/save", saveRequestData, (data, status, xhr) => {
+        if (status != "success") {
+            //uh-oh!
+        }
+    });
+}
