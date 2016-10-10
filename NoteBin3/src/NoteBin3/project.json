@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "platform"
     },
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -19,7 +19,7 @@
     "System.Linq": "4.1.0",
     "System.Collections.Immutable": "1.2.0",
     "System.Linq.Queryable": "4.0.1",
-    "System.Interactive.Async": "3.0.0"
+    "System.Interactive.Async": "3.1.0-rc"
   },
 
   "tools": {
@@ -39,7 +39,7 @@
         "LiteDB.Platform.NetCore": {
           "target": "project"
         }
-      }
+      },
     }
   },
 
