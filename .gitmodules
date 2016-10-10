@@ -1,3 +1,6 @@
 [submodule "Dependencies/KJade"]
 	path = NoteBin3/src/Dependencies/KJade
 	url = https://github.com/0xFireball/KJade
+[submodule "NoteBin3/src/Dependencies/LiteDB.DotNetCore"]
+	path = NoteBin3/src/Dependencies/LiteDB.DotNetCore
+	url = https://github.com/0xFireball/LiteDB.DotNetCore.git

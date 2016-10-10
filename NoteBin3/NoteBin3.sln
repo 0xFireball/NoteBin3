@@ -18,7 +18,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "KJade", "src\Dependencies\K
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "KJade.ViewEngine", "src\Dependencies\KJade\KJade\src\KJade.ViewEngine\KJade.ViewEngine.xproj", "{D9F369E2-036E-4D2B-8B63-940C756745E0}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LiteDB.DotNetCore", "src\Dependencies\LiteDB.DotNetCore\LiteDB.DotNetCore.xproj", "{36745750-3DDA-4EAD-86EE-0F61A758EC8E}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LiteDB.DotNetCore", "src\Dependencies\LiteDB.DotNetCore\LiteDB.DotNetCore\LiteDB.DotNetCore.xproj", "{36745750-3DDA-4EAD-86EE-0F61A758EC8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
