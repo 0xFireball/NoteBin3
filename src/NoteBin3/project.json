@@ -53,6 +53,7 @@
     "include": [
       "wwwroot",
       "web.config",
+	  "hosting.json",
 	  "Views"
     ]
   },
